@@ -1,7 +1,7 @@
 import mysql.connector
 
-
 class Ocorrencia:
+    #Entrando no banco de dados criado no Workbench
     connection = mysql.connector.connect(
         host="localhost",
         user="root",
@@ -15,7 +15,9 @@ class Ocorrencia:
 
 
     def inserir(self, tipo, comentario):
-       
+        
+            #Essa função será responsável por inserir dados da ocorrência (elogio, reclamações, ideias) do input criado na main direto no banco de dados.
+
             sql = 'INSERT INTO ocorrencia (tipo, comentario) values (%s, %s)'
             data = (tipo, comentario)
        
