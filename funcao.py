@@ -26,10 +26,26 @@ class Ocorrencia:
             self.connection.commit()
 
 
-    def listar_itens(self, tipo):
-        pass
+    def listar_itens(self, lista):
+        if lista == 'elogio':
+            sql = "SELECT * FROM ocorrencia WHERE tipo = 'elogio'"
+            self.cursor.execute(sql)
+            mostra = self.cursor.fetchall()
+            for elogio in enumerate(mostra):
+                print(f'{elogio [0]} | {elogio [1]}')
 
-
+        elif lista == 'reclamação':
+            sql = "SELECT * FROM ocorrencia WHERE tipo = 'reclamação'"
+            self.cursor.execute(sql)
+            mostra = self.cursor.fetchall()
+            for reclamacao in enumerate():
+                print(f'{reclamacao [0]} | {reclamacao [1]}')
+        elif lista == 'ideias':
+            sql = "SELECT * FROM ocorrencia WHERE tipo = 'ideias'"
+            self.cursor.execute(sql)
+            mostra= self.cursor.fetchall()
+            for ideias in enumerate(mostra):
+                print(f'{ideias [0]} | {ideias [1]} ')
     def apagar_tudo(self):
         pass
 
