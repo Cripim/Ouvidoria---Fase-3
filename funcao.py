@@ -27,6 +27,8 @@ class Ocorrencia:
 
 
     def listar_itens(self, lista):
+        #Essa função será responsável por listar as ocorrências inseridas no Banco de Dados.
+        
         if lista == 'elogio':
             sql = "SELECT * FROM ocorrencia WHERE tipo = 'elogio'"
             self.cursor.execute(sql)
