@@ -40,6 +40,18 @@ class Ocorrencia:
         self.cursor.execute(sql, data)
         self.connection.commit()
 
-      
-
+    
+    def apagarCategoria(self, tipo):
+        sql = 'DELETE FROM ocorrencia WHERE tipo = %s'
+        data = (tipo,)
        
+        
+        self.cursor.execute(sql, data)
+        resultado = self.cursor.fetchall()
+        return len(resultado)
+    def apagarTabela(self):
+        sql = "TRUNCATE TABLE ocorrencia"
+        
+
+        self.cursor.execute(sql)
+        self.connection.commit()

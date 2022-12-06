@@ -58,39 +58,49 @@ while rodando:
   elif (ouvidoriaFacisa == '5'):
         print('')
         print('1 - Apagar comentário especifico')
-        print('2 - Apagar tudo')
+        print('2 - Apagar tabela específica')
+        print('3 - Apagar tudo')
         print('')
         apagar = int(input('Qual opção deseja: '))
 
-        if (apagar == 2):
-            m.apagar_tudo()
-            print('')
-            print('Você apagou tudo.')
-            print()
-           
+        if (apagar == 1):
+         print('elogio(1), reclamação (2), sugestão(3)')
+         comentario = input('digite a opção para apagar: ')
+         if comentario == '1':
+           parametro = int(input('digite o indice que deseja apagar da lista de elogio:'))
+           m.apagarEspecifico(parametro)
+           print("Ocorrência específica excluída!")
+           print()
 
-        elif (apagar == 1):
-            print('elogio(1), reclamação (2), sugestão(3)')
-            apagar2 = input('digite a opção para apagar: ')
-            if apagar2 == '1':
-                
-                parametro = int(input('digite o indice que deseja apagar da lista de elogio:'))
-                m.apagarEspecifico(parametro)
-                print("Ocorrência específica excluída!")
-                print()
-                
-            if apagar2 == '2':
-                
-                parametro = int(input('digite o indice que deseja apagar da lista de reclamação:'))
-                m.apagarEspecifico(parametro)
-                print("Ocorrência específica excluída!")
-                print()
-            if apagar2 == '3':
-                
-                parametro = int(input('digite o indice que deseja apagar da lista de sugestão:'))
-                m.apagar_especifico(parametro)
-                print("Ocorrência específica excluída!")
-                print()
+
+         elif(comentario == '2'):
+          parametro = int(input('digite o indice que deseja apagar da lista de reclamação:'))
+          m.apagarEspecifico(parametro)
+          print("Ocorrência específica excluída!")
+          print()
+         elif (comentario == '3'):
+          parametro = int(input('digite o indice que deseja apagar da lista de sugestão:'))
+          m.apagar_especifico(parametro)
+          print("Ocorrência específica excluída!")
+          print()
+        elif(apagar == 2):
+          print('Tabela elogio(1), tabela reclamação(2), tabela ideias(3)') 
+          tipo = input('digite a opção para apagar: ')
+          if (tipo == '1'):
+            
+            m.apagarCategoria('elogio')
+            print("Tabela elogio excluída!")
+          elif(tipo == '2'):
+            
+            m.apagarCategoria('reclamação')
+            print("Tabela reclamação excluída!")
+
+          elif(tipo == '3'):
+            
+            m.apagarCategoria('ideias')
+            print("Tabela ideias excluída!")  
+
+
   elif(ouvidoriaFacisa == '5'):
    rodando = False
    print("Você saiu do sistema! Volte sempre!")
