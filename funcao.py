@@ -33,6 +33,13 @@ class Ocorrencia:
         listaOcorrencias = self.cursor.fetchall()
         for i in listaOcorrencias:
          print(i)
+    def apagarEspecifico(self, id):
+        sql = 'DELETE FROM ocorrencia WHERE id = (%s)'
+        data = (id,)
+        
+        self.cursor.execute(sql, data)
+        self.connection.commit()
+
       
 
        
