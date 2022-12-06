@@ -50,7 +50,7 @@ while rodando:
   
   elif(ouvidoriaFacisa == '4'):
       print("Você está prestes a listar todas as ocorrências registradas.")
-      listar = input("Digite sim para listar todas as ocorrências registradas no banco de dados:")
+      listar = input("Digite sim para listar todas as ocorrências registradas no banco de dados: ")
       m.listar()
       print()
 
@@ -80,7 +80,7 @@ while rodando:
           print()
          elif (comentario == '3'):
           parametro = int(input('digite o indice que deseja apagar da lista de sugestão:'))
-          m.apagar_especifico(parametro)
+          m.apagarEspecifico(parametro)
           print("Ocorrência específica excluída!")
           print()
         elif(apagar == 2):
