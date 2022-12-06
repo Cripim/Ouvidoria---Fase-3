@@ -83,21 +83,21 @@ while rodando:
             print('elogio(1), reclamação (2), sugestão(3)')
             apagar2 = input('digite a opção para apagar: ')
             if apagar2 == '1':
-                m.listar_itens('1')
+                
                 parametro = int(input('digite o indice que deseja apagar da lista de elogio:'))
-                m.apagar_especifico(apagar2, parametro)
-                print(f"Itens restantes: {m.listaElogios}")
+                m.apagarEspecifico(parametro)
+                print("Ocorrência específica excluída!")
                 
             if apagar2 == '2':
-                m.listar_itens('2')
+                
                 parametro = int(input('digite o indice que deseja apagar da lista de reclamação:'))
-                m.apagar_especifico(apagar2, parametro)
-                print(f"Itens restantes: {m.listaReclamacao}")
+                m.apagarEspecifico(parametro)
+                print("Ocorrência específica excluída!")
             if apagar2 == '3':
-                m.listar_itens('3')
+                
                 parametro = int(input('digite o indice que deseja apagar da lista de sugestão:'))
-                m.apagar_especifico(apagar2, parametro)
-                print(f"Itens restantes: {m.listaIdeias}")
+                m.apagar_especifico(parametro)
+                print("Ocorrência específica excluída!")
   elif(ouvidoriaFacisa == '5'):
    rodando = False
    print("Você saiu do sistema! Volte sempre!")
