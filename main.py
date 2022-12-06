@@ -49,21 +49,11 @@ while rodando:
 
   
   elif(ouvidoriaFacisa == '4'):
-      print('Para listar elogios (1), para listar reclamação (2), para listar ideias(3)')
-      listar = input('Digite uma opção: ')
+      print("Você está prestes a listar todas as ocorrências registradas.")
+      listar = input("Listar ocorrências:")
+      m.listar()
 
-      if (listar == 1):
-        print()
-        m.listar_itens('elogio')
-        print()
-      elif (listar == 2):
-        print()
-        m.listar_itens("reclamação")
-        print()
-      elif(listar == 3):
-        print()
-        m.listar_itens("ideias")
-        print()
+      
 
    
   elif (ouvidoriaFacisa == '5'):

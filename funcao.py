@@ -28,8 +28,11 @@ class Ocorrencia:
 
     def listar(self):
         #Essa função será responsável por listar as ocorrências inseridas no Banco de Dados.
-
+        sql = "SELECT * FROM ocorrencia"    
+        self.cursor.execute(sql)
+        listaOcorrencias = self.cursor.fetchall()
+        for i in listaOcorrencias:
+         print(i)
       
 
-     def apagarEspecifico(self, parametro):
-        pass
+       
