@@ -27,12 +27,21 @@ class Ocorrencia:
 
 
     def listar(self):
-        #Essa função será responsável por listar as ocorrências inseridas no Banco de Dados.
         sql = "SELECT * FROM ocorrencia"    
         self.cursor.execute(sql)
         listaOcorrencias = self.cursor.fetchall()
         for i in listaOcorrencias:
-         print(i)
+         print(f"ID --> {i[0]} --> Tipo --> {i[1]} -->  Comentário --> {i[2]}")
+
+
+    def listarEspecifico(self,tipo):
+        sql = "SELECT * FROM ocorrencia WHERE tipo = (%s)" 
+        data = (tipo,)   
+        self.cursor.execute(sql,data)
+        listaOcorrencias = self.cursor.fetchall()
+        for i in listaOcorrencias:
+          print(f"ID --> {i[0]} --> Tipo --> {i[1]} -->  Comentário --> {i[2]}")
+
     def apagarEspecifico(self, id):
         sql = 'DELETE FROM ocorrencia WHERE id = (%s)'
         data = (id,)
@@ -49,9 +58,8 @@ class Ocorrencia:
         self.cursor.execute(sql, data)
         resultado = self.cursor.fetchall()
         return len(resultado)
-    def apagarTabela(self):
+    def apagarTudo(self):
         sql = "TRUNCATE TABLE ocorrencia"
-        
 
         self.cursor.execute(sql)
         self.connection.commit()
