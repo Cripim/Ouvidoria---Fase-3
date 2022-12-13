@@ -50,8 +50,7 @@ while rodando:
   
   elif(ouvidoriaFacisa == '4'):
       print("Você está prestes a listar todas as ocorrências registradas.")
-     
-      listar = input("Digite sim para listar todas as ocorrências registradas no banco de dados: ")
+      print()
       m.listar()
       print()
 
@@ -65,7 +64,7 @@ while rodando:
         apagar = input('Qual opção deseja: ')
 
         if (apagar == '1'):
-         print('elogio(1), reclamação (2), sugestão(3)')
+         print('elogio(1), reclamação (2), ideias(3)')
          comentario = input('digite a opção para apagar: ')
          if comentario == '1':
              
@@ -85,7 +84,7 @@ while rodando:
               print()
          elif (comentario == '3'):
               m.listarEspecifico("sugestão")
-              parametro = int(input('digite o indice que deseja apagar da lista de sugestão:'))
+              parametro = int(input('digite o indice que deseja apagar da lista de ideias:'))
               m.apagarEspecifico(parametro)
               print("Ocorrência específica excluída!")
               print()
@@ -96,6 +95,7 @@ while rodando:
             
               m.apagarCategoria('elogio')
               print("Tabela elogio excluída!")
+              print()
             elif(tipo == '2'):
                 
                 m.apagarCategoria('reclamação')
@@ -108,15 +108,11 @@ while rodando:
                   print("Tabela ideias excluída!")  
                   print()
         elif (apagar == '3'):
-            
-            print("Não há nada registrado!")
-            print("Deseja excluir todas as tabelas?")
-            tudo = input("Digite sim para continuar: ")
             print('Você excluiu todos os dados registrados!')
             print()
             m.apagarTudo()
             
 
   elif(ouvidoriaFacisa == '6'):
-   rodando = False
-   print("Você saiu do sistema! Volte sempre!")
+    rodando = False
+    print("Você saiu do sistema! Volte sempre!")

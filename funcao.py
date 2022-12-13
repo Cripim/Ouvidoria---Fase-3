@@ -51,13 +51,11 @@ class Ocorrencia:
 
     
     def apagarCategoria(self, tipo):
-        sql = 'DELETE FROM ocorrencia WHERE tipo = %s'
+        sql = 'DELETE FROM ocorrencia WHERE tipo = (%s)'
         data = (tipo,)
-       
-        
         self.cursor.execute(sql, data)
-        resultado = self.cursor.fetchall()
-        return len(resultado)
+        self.connection.commit()
+
     def apagarTudo(self):
         sql = "TRUNCATE TABLE ocorrencia"
 
