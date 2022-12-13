@@ -116,3 +116,4 @@ while rodando:
   elif(ouvidoriaFacisa == '6'):
     rodando = False
     print("Você saiu do sistema! Volte sempre!")
+
